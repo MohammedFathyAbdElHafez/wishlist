@@ -22,7 +22,7 @@ class ItemTest extends TestCase
         $response->assertStatus(200);
     }
 
-        /**
+    /**
      * test index function
      */
     public function test_that_user_can_read_all_items(): void
@@ -32,5 +32,14 @@ class ItemTest extends TestCase
         $response->assertSee($item[0]->id);
     }
 
-
+    /**
+     * test show function
+     */
+    public function test_user_can_read_single_item(): void
+    {
+        $item = Item::factory(1)->create();
+        $response = $this->get('/api/items/' . $item[0]->id);
+        $response->assertSee($item[0]->name)
+            ->assertSee($item[0]->price);
+    }
 }
