@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -13,6 +14,8 @@ class ItemController extends Controller
     public function index()
     {
         //
+        $items = Item::latest()->get();
+        return view('items.index',compact('items'));
     }
 
     /**
@@ -29,7 +32,8 @@ class ItemController extends Controller
     public function show(string $id)
     {
         //
-
+        $item = Item::find($id);
+        return view('items.show',compact('item'));
     }
 
     /**
