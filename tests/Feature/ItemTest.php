@@ -22,5 +22,15 @@ class ItemTest extends TestCase
         $response->assertStatus(200);
     }
 
+        /**
+     * test index function
+     */
+    public function test_that_user_can_read_all_items(): void
+    {
+        $item = Item::factory(10)->create();
+        $response = $this->get('api/items');
+        $response->assertSee($item[0]->id);
+    }
+
 
 }
