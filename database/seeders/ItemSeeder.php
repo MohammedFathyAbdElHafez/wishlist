@@ -14,37 +14,7 @@ class ItemSeeder extends Seeder
     public function run(): void
     {
         // 
-        $variables = [
-            [
-                'name' => 'item 1',
-                'price' => '50.00',
-                'seller' => 'Radioshake',
-            ],
-            [
-                'name' => 'item 2',
-                'price' => '60.00',
-                'seller' => 'BM',
-            ],
-            [
-                'name' => 'item 3',
-                'price' => '38.00',
-                'seller' => 'BIM',
-            ],
-            [
-                'name' => 'item 4',
-                'price' => '30.00',
-                'seller' => 'Thunder',
-            ],
-            [
-                'name' => 'item 5',
-                'price' => '80.00',
-                'seller' => 'House',
-            ],
-        ];
-
-
-        $item = new Item();
-        array_map(fn ($variable) => $item->create($variable), $variables);
+        Item::factory(10)->create();
 
     }
 }
