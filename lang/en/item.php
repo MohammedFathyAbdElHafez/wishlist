@@ -18,5 +18,9 @@ return [
     'deleted' => 'Item deleted successfully.',
     'browse' => 'Browse items',
     'long_description' => 'This will lead you to the page which contains all items with full data',
+    'name' => 'Name',
+    'price' => 'Price',
+    'seller' => 'Seller',
+
 
 ];
