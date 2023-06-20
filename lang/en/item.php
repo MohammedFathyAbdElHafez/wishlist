@@ -16,4 +16,7 @@ return [
     'created' => 'Item created successfully.',
     'updated' => 'Item updated successfully.',
     'deleted' => 'Item deleted successfully.',
+    'browse' => 'Browse items',
+    'long_description' => 'This will lead you to the page which contains all items with full data',
+
 ];
