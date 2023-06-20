@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/items', [ItemController::class,'index']);
+
+Route::get('/items', function () {
+    return view('items.index');
+});
 
